@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedDirection: 2
-  timeToDestroy: 3
+  timeToDestroy: 10
 --- !u!212 &212816105009605772
 SpriteRenderer:
   m_ObjectHideFlags: 1
