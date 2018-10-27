@@ -67,6 +67,7 @@ public class PlayerCursor : MonoBehaviour {
                 newPosition = new Vector3(newPosition.x + TileSize, newPosition.y, newPosition.z);
             else if (Input.GetKeyDown(Action))
                 CreateArrow();
+            
 
             if (transform.position != newPosition)  // AKA the player pressed a button
             {
