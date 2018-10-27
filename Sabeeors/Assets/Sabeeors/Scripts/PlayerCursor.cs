@@ -48,8 +48,12 @@ public class PlayerCursor : MonoBehaviour {
                 newPosition = new Vector3(newPosition.x + TileSize, newPosition.y, newPosition.z);
             else if (Input.GetKeyDown(Action))
                  Instantiate(arrowsPrefab[index], transform.position, transform.rotation);
+
             if (transform.position != newPosition)  // AKA the player pressed a button
+            {
                 positionLerp = 0;
+                newPosition = new Vector3(Mathf.Clamp(newPosition.x, -4.44f, 4.44f), Mathf.Clamp(newPosition.y, -4.44f, 4.44f), newPosition.z);
+            }
         }
 
 	}

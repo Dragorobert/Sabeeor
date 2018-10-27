@@ -17,7 +17,7 @@ public class Flower : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        roundManager = GameObject.Find("RoundManager").GetComponent<RoundManager>();
+        roundManager = GameObject.Find("Round Manager").GetComponent<RoundManager>();
 
         if (roundManager == null)
             Debug.LogError("Round manager not found!");
