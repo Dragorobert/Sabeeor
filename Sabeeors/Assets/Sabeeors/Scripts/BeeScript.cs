@@ -68,12 +68,14 @@ public class BeeScript : MonoBehaviour
                 break;
             case Direction.left:
                 currentDirection = Direction.right;
+                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
                 break;
             case Direction.down:
                 currentDirection = Direction.up;
                 break;
             case Direction.right:
                 currentDirection = Direction.left;
+                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
                 break;
         }
     }
