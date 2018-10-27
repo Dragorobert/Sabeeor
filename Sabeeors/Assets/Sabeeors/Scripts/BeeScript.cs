@@ -37,11 +37,20 @@ public class BeeScript : MonoBehaviour
      public void MovRight()
      {
       this.transform.Translate(Vector2.right * speed * Time.deltaTime);
-     }
+        if (gameObject.CompareTag("Bee1"))
+            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+        else if (gameObject.CompareTag("Bee2"))
+            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+
+    }
      public void MovLeft()
      {
        this.transform.Translate(Vector2.left * speed * Time.deltaTime);
-     }
+        if (gameObject.CompareTag("Bee1"))
+            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+        else if (gameObject.CompareTag("Bee2"))
+            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+    }
      public void MovUp()
      {
        this.transform.Translate(Vector2.up * speed * Time.deltaTime);
@@ -68,7 +77,6 @@ public class BeeScript : MonoBehaviour
                 break;
             case Direction.left:
                 currentDirection = Direction.right;
-                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
                 break;
             case Direction.down:
                 currentDirection = Direction.up;

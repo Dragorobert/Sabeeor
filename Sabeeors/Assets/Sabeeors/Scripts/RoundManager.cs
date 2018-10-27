@@ -9,6 +9,9 @@ using UnityEngine.UI;
 /// </summary>
 public class RoundManager : MonoBehaviour {
 
+    public GameObject FlowerPrefab;
+    private float flowerSpawnTimer = 10;
+
     public string ResultsScene;  // Name of the scene where the results are shown.
 
     public float RoundLength;  // Time in seconds.
@@ -35,6 +38,20 @@ public class RoundManager : MonoBehaviour {
 
         if (playerOneText == null || playerTwoText == null || timerText == null)
             Debug.LogError("Error finding text objects.");
+
+        for (int i = 0; i < 5; i++)
+            SpawnFlower();
+    }
+
+    private void SpawnFlower()
+    {
+        Vector3 spawnPosition = new Vector3(RandomGridPosition(), RandomGridPosition(), 0);
+        Instantiate(FlowerPrefab, spawnPosition, Quaternion.identity);
+    }
+
+    private float RandomGridPosition()
+    {
+        return Mathf.Round(Random.Range(-5f, 4f));
     }
 	
 	// Update is called once per frame
@@ -44,6 +61,12 @@ public class RoundManager : MonoBehaviour {
 
         if (roundTimer <= 0)
             SceneManager.LoadScene(ResultsScene);
+
+        flowerSpawnTimer -= Time.deltaTime;
+        if (flowerSpawnTimer <= 0) {
+            SpawnFlower();
+            flowerSpawnTimer = Random.Range(5, 15);
+        }
 	}
     
     public void AddScore(string player,int score)
