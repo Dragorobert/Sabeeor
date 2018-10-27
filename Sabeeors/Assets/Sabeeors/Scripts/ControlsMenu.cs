@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ControlsMenu : MonoBehaviour {
 
-    public static MainMenuController instance = null;
+    public static ControlsMenu instance = null;
     public GameObject controls;
     bool active = true; //para que el primer click encienda
     public KeyCode ControllerOpen;
@@ -33,7 +33,7 @@ public class ControlsMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(Down))
+        if (Input.GetKeyDown(ControllerOpen))
             Controles();
     }
     public void Controles()
