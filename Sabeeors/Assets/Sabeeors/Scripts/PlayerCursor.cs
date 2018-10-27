@@ -9,6 +9,9 @@ public class PlayerCursor : MonoBehaviour {
 
     public int TileSize;
 
+    public GameObject[] arrowsPrefab;
+    GameObject currentArrow;
+    int index;
     public KeyCode Up;
     public KeyCode Left;
     public KeyCode Down;
@@ -24,9 +27,11 @@ public class PlayerCursor : MonoBehaviour {
 	void Start () {
         newPosition = transform.position;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
+        index = Random.Range(0, arrowsPrefab.Length);
+
 
         if (positionLerp < 1)
             moveCursor();
@@ -41,7 +46,8 @@ public class PlayerCursor : MonoBehaviour {
                 newPosition = new Vector3(newPosition.x, newPosition.y - TileSize, newPosition.z);
             else if (Input.GetKeyDown(Right))
                 newPosition = new Vector3(newPosition.x + TileSize, newPosition.y, newPosition.z);
-
+            else if (Input.GetKeyDown(Action))
+                 Instantiate(arrowsPrefab[index], transform.position, transform.rotation);
             if (transform.position != newPosition)  // AKA the player pressed a button
                 positionLerp = 0;
         }

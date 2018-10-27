@@ -33,5 +33,7 @@ public class Arrow : MonoBehaviour {
                 col.GetComponent<BeeScript>().currentDirection = BeeScript.Direction.left;
                 break;
         }
+
+        Destroy(this.gameObject);
     }
 }
