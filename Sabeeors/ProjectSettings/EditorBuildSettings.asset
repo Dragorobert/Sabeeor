@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sabeeors/Scenes/Creditos.unity
     guid: a483a7e301d6737488d0a4adad0ec8d9
+  - enabled: 1
+    path: Assets/Sabeeors/Scenes/Results.unity
+    guid: e534360628b14914798b5152480049f1
   m_configObjects: {}
