@@ -22,6 +22,7 @@ public class RoundManager : MonoBehaviour {
 
     private Text playerOneText;
     private Text playerTwoText;
+    private Text timerText;
 
     // Use this for initialization
     void Start () {
@@ -30,14 +31,16 @@ public class RoundManager : MonoBehaviour {
         GameObject canvas = GameObject.Find("Canvas");
         playerOneText = canvas.transform.Find("P1 Score").GetComponent<Text>();
         playerTwoText = canvas.transform.Find("P2 Score").GetComponent<Text>();
+        timerText = canvas.transform.Find("Timer").GetComponent<Text>();
 
-        if (playerOneText == null || playerTwoText == null)
-            Debug.LogError("Error finding score text objects.");
+        if (playerOneText == null || playerTwoText == null || timerText == null)
+            Debug.LogError("Error finding text objects.");
     }
 	
 	// Update is called once per frame
 	void Update () {
         roundTimer -= Time.deltaTime;
+        timerText.text = Mathf.Round(roundTimer).ToString();
 
         if (roundTimer <= 0)
             SceneManager.LoadScene(ResultsScene);
