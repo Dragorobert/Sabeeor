@@ -1,0 +1,48 @@
+
+skeleton.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ala_back
+  rotate: true
+  xy: 124, 12
+  size: 33, 52
+  orig: 33, 52
+  offset: 0, 0
+  index: -1
+ala_front
+  rotate: false
+  xy: 178, 6
+  size: 45, 39
+  orig: 45, 39
+  offset: 0, 0
+  index: -1
+antena_back
+  rotate: true
+  xy: 2, 2
+  size: 23, 40
+  orig: 23, 40
+  offset: 0, 0
+  index: -1
+antena_front
+  rotate: true
+  xy: 44, 9
+  size: 16, 38
+  orig: 16, 38
+  offset: 0, 0
+  index: -1
+cuerpo
+  rotate: false
+  xy: 124, 47
+  size: 115, 79
+  orig: 115, 79
+  offset: 0, 0
+  index: -1
+sample
+  rotate: false
+  xy: 2, 27
+  size: 120, 99
+  orig: 120, 99
+  offset: 0, 0
+  index: -1
