@@ -10,8 +10,12 @@ public class PlayerCursor : MonoBehaviour {
     public int TileSize;
 
     int index;
-    public GameObject current_A;
-    public GameObject next_A;
+
+    public GameObject current_panel;
+    private GameObject current_piece;
+    public GameObject next_panel;
+    private GameObject next_piece;
+
     public GameObject[] arrowsPrefab;
 
     bool empty = true;
@@ -33,7 +37,14 @@ public class PlayerCursor : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         newPosition = transform.position;
-	}
+
+        index = Random.Range(0, arrowsPrefab.Length);
+        current_piece = Instantiate(arrowsPrefab[index], current_panel.transform.position, Quaternion.identity);
+        current_piece.transform.position = new Vector3(current_piece.transform.position.x, current_piece.transform.position.y, -5);
+        index = Random.Range(0, arrowsPrefab.Length);
+        next_piece = Instantiate(arrowsPrefab[index], next_panel.transform.position, Quaternion.identity);
+        next_piece.transform.position = new Vector3(next_piece.transform.position.x, next_piece.transform.position.y, -5);
+    }
 
     // Update is called once per frame
     void Update() {
@@ -55,11 +66,7 @@ public class PlayerCursor : MonoBehaviour {
             else if (Input.GetKeyDown(Right))
                 newPosition = new Vector3(newPosition.x + TileSize, newPosition.y, newPosition.z);
             else if (Input.GetKeyDown(Action))
-            {
                 CreateArrow();
-                VisualArrow(current_A);
-                VisualArrow(next_A);
-            };
 
             if (transform.position != newPosition)  // AKA the player pressed a button
             {
@@ -71,12 +78,15 @@ public class PlayerCursor : MonoBehaviour {
 	}
     public void CreateArrow()
     {
-        Instantiate(arrowsPrefab[index], transform.position, transform.rotation);
-    }
+        current_piece.transform.position = transform.position;
+        current_piece.GetComponent<Arrow>().RunDestroyTimer = true;
 
-    public void VisualArrow(GameObject panelToInstace)
-    {
-        Instantiate(arrowsPrefab[index], panelToInstace.transform.position, panelToInstace.transform.rotation);
+        next_piece.transform.position = current_panel.transform.position;
+        current_piece = next_piece;
+        current_piece.transform.position = new Vector3(current_piece.transform.position.x, current_piece.transform.position.y, -5);
+
+        next_piece = Instantiate(arrowsPrefab[index], next_panel.transform.position, transform.rotation);
+        next_piece.transform.position = new Vector3(next_piece.transform.position.x, next_piece.transform.position.y, -5);
     }
 
     private void MoveCursor()
