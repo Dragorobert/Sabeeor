@@ -6,7 +6,7 @@ public class NextTileRandomizer : MonoBehaviour {
 
     public bool spawnNextTile;
     public int maxTileVisible;
-    public PlayerTile[] tilePool;
+    public PlayerTile[] tilePool; //Tipos de tille
     private int currentTileVisible;
 
 	// Use this for initialization
@@ -18,9 +18,9 @@ public class NextTileRandomizer : MonoBehaviour {
 	void Update () {
         if (spawnNextTile)
         {
-            if (currentTileVisible < maxTileVisible)
+            if (currentTileVisible < maxTileVisible) //Si hay menos tiles de los necesarios crea otro2
             {
-                SpawnTile();
+                SpawnTile(); //Crea la instancia del tile
             }
         }
 	}

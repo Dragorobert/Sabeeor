@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bee_script : MonoBehaviour 
+public class BeeScript : MonoBehaviour 
 {
 
     Transform mytransform;

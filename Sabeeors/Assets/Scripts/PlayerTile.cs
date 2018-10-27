@@ -9,7 +9,7 @@ public class PlayerTile : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		switch (tileTipe)
+		switch (tileTipe) //Comportamiento segun el tipo de tile
         {
             case 1:
                 break;
