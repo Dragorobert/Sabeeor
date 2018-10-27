@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61306976120904572}
   - component: {fileID: 50965359800118388}
   m_Layer: 0
-  m_Name: Arrow_Down
+  m_Name: Blue_Arrow_Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedDirection: 3
+  timeToDestroy: 3
 --- !u!212 &212816105009605772
 SpriteRenderer:
   m_ObjectHideFlags: 1

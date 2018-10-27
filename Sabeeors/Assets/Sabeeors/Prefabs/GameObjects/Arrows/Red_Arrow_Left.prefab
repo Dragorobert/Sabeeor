@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61306976120904572}
   - component: {fileID: 50965359800118388}
   m_Layer: 0
-  m_Name: Arrow_Right
+  m_Name: Red_Arrow_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a004687ef1b5e43acb1e172506d7d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedDirection: 0
+  selectedDirection: 1
+  timeToDestroy: 3
 --- !u!212 &212816105009605772
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -135,7 +136,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 72be6de2c5cb6944ab4cc3e5de83bbea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d39aed8d16c64444abaafd358d7e345, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -9,9 +9,16 @@ public class PlayerCursor : MonoBehaviour {
 
     public int TileSize;
 
-    public GameObject[] arrowsPrefab;
-    GameObject currentArrow;
     int index;
+    public GameObject current_A;
+    public GameObject next_A;
+    public GameObject[] arrowsPrefab;
+
+    bool empty = true;
+
+    int maxArrow = 3;
+    int arrowCount = 0;
+
     public KeyCode Up;
     public KeyCode Left;
     public KeyCode Down;
@@ -30,16 +37,17 @@ public class PlayerCursor : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+
         index = Random.Range(0, arrowsPrefab.Length);
 
-
         if (positionLerp < 1)
-            moveCursor();
+            MoveCursor();
 
         else  // The player can only move the cursor if it is not already moving.
         {
             if (Input.GetKeyDown(Up))
                 newPosition = new Vector3(newPosition.x, newPosition.y + TileSize, newPosition.z);
+            //metodo instancia que se ve
             else if (Input.GetKeyDown(Left))
                 newPosition = new Vector3(newPosition.x - TileSize, newPosition.y, newPosition.z);
             else if (Input.GetKeyDown(Down))
@@ -47,7 +55,11 @@ public class PlayerCursor : MonoBehaviour {
             else if (Input.GetKeyDown(Right))
                 newPosition = new Vector3(newPosition.x + TileSize, newPosition.y, newPosition.z);
             else if (Input.GetKeyDown(Action))
-                 Instantiate(arrowsPrefab[index], transform.position, transform.rotation);
+            {
+                CreateArrow();
+                VisualArrow(current_A);
+                VisualArrow(next_A);
+            };
 
             if (transform.position != newPosition)  // AKA the player pressed a button
             {
@@ -57,8 +69,17 @@ public class PlayerCursor : MonoBehaviour {
         }
 
 	}
+    public void CreateArrow()
+    {
+        Instantiate(arrowsPrefab[index], transform.position, transform.rotation);
+    }
 
-    private void moveCursor()
+    public void VisualArrow(GameObject panelToInstace)
+    {
+        Instantiate(arrowsPrefab[index], panelToInstace.transform.position, panelToInstace.transform.rotation);
+    }
+
+    private void MoveCursor()
     {
         transform.position = sinerp(transform.position, newPosition, positionLerp);
         positionLerp += (1 / MovementTime) * Time.deltaTime;

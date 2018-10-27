@@ -6,7 +6,7 @@ public class Arrow : MonoBehaviour {
 
     public enum direccionFlecha { right, left, up, down };
     public direccionFlecha selectedDirection;
-
+    public float timeToDestroy;
     // Use this for initialization
     void Start () {
 
@@ -14,7 +14,11 @@ public class Arrow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() {
-        
+        timeToDestroy -= Time.deltaTime;
+        if (timeToDestroy <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -33,7 +37,6 @@ public class Arrow : MonoBehaviour {
                 col.GetComponent<BeeScript>().currentDirection = BeeScript.Direction.left;
                 break;
         }
-
         Destroy(this.gameObject);
     }
 }
