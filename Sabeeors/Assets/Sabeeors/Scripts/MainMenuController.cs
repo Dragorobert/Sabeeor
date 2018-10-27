@@ -8,7 +8,8 @@ public class MainMenuController : MonoBehaviour {
     {
         SceneManager.LoadScene("Level_1");
     }
-    public void Quit(){
+    public void Quit()
+    {
         Application.Quit();
     }
 }
