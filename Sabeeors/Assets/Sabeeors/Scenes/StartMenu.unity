@@ -479,27 +479,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 193837174}
   m_CullTransparentMesh: 0
---- !u!1 &300780175 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1427754428407772, guid: a28aabdea23205e4694505e694fd266b,
-    type: 2}
-  m_PrefabInternal: {fileID: 2123080641}
 --- !u!224 &300780176 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224801989893906640, guid: a28aabdea23205e4694505e694fd266b,
     type: 2}
   m_PrefabInternal: {fileID: 2123080641}
---- !u!114 &300780177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 300780175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7641b856cbcd2c74fa9ffb419c1175ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &365314724
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,8 +594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fcf5dbcd755104aad0f22c59fffca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controls: {fileID: 1954060241}
-  ControllerOpen: 112
 --- !u!1 &456475951
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,11 +802,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1954060241 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1320515232229248, guid: a28aabdea23205e4694505e694fd266b,
-    type: 2}
-  m_PrefabInternal: {fileID: 2123080641}
 --- !u!1001 &2123080641
 Prefab:
   m_ObjectHideFlags: 0
@@ -920,26 +897,6 @@ Prefab:
     - target: {fileID: 224801989893906640, guid: a28aabdea23205e4694505e694fd266b,
         type: 2}
       propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114495776336732110, guid: a28aabdea23205e4694505e694fd266b,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 300780175}
-    - target: {fileID: 114495776336732110, guid: a28aabdea23205e4694505e694fd266b,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 224801989893906640, guid: a28aabdea23205e4694505e694fd266b,
-        type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224801989893906640, guid: a28aabdea23205e4694505e694fd266b,
-        type: 2}
-      propertyPath: m_LocalScale.y
       value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
