@@ -7,12 +7,11 @@ public class BeeScript : MonoBehaviour
     public  float speed = 0.4f;
     public enum Direction {right,left,up,down};
     public Direction currentDirection;
-    Rigidbody2D rb;
 
     // Use this for initialization
     void Start()
     {
-        Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -54,7 +53,11 @@ public class BeeScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        if(col.gameObject.tag == "Wall")
+        { 
         reverseDirection();
+        }
+
     }
 
     void reverseDirection()

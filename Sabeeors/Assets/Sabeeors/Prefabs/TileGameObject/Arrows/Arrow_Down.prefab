@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a004687ef1b5e43acb1e172506d7d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedDirection: 0
+  selectedDirection: 3
 --- !u!212 &212816105009605772
 SpriteRenderer:
   m_ObjectHideFlags: 1
