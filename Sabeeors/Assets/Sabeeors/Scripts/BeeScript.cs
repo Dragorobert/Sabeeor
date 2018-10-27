@@ -51,13 +51,28 @@ public class BeeScript : MonoBehaviour
      {
        this.transform.Translate(Vector2.down * speed * Time.deltaTime);
      }
-    /*void OnTriggerEnter2D(Collider2D col)
-    {
-        Debug.Log("COLLISION");
-    }*/
+
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("Collision Pared");
+        reverseDirection();
+    }
+
+    void reverseDirection()
+    {
+        switch (currentDirection) {
+            case Direction.up:
+                currentDirection = Direction.down;
+                break;
+            case Direction.left:
+                currentDirection = Direction.right;
+                break;
+            case Direction.down:
+                currentDirection = Direction.up;
+                break;
+            case Direction.right:
+                currentDirection = Direction.left;
+                break;
+        }
     }
 
 }
