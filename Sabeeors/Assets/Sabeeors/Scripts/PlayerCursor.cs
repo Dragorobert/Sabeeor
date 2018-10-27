@@ -57,8 +57,6 @@ public class PlayerCursor : MonoBehaviour {
             else if (Input.GetKeyDown(Action))
             {
                 CreateArrow();
-                VisualArrow(current_A);
-                VisualArrow(next_A);
             };
 
             if (transform.position != newPosition)  // AKA the player pressed a button
@@ -76,7 +74,7 @@ public class PlayerCursor : MonoBehaviour {
 
     public void VisualArrow(GameObject panelToInstace)
     {
-        Instantiate(arrowsPrefab[index], panelToInstace.transform.position, panelToInstace.transform.rotation);
+        
     }
 
     private void MoveCursor()
