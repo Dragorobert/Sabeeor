@@ -33,7 +33,9 @@ public class RoundManager : MonoBehaviour {
     
     public void AddScore(string player,int score)
     {
-
-
+        if (player == playerOneTag)
+            playerOneScore += score;
+        else if (player == playerTwoTag)
+            playeTwoScore += score;
     }
 }
