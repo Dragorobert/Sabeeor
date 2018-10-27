@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bee2
+  - Bee1
+  - Wall
+  - Items
   layers:
   - Default
   - TransparentFX
