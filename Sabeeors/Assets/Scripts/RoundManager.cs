@@ -12,12 +12,14 @@ public class RoundManager : MonoBehaviour {
 
     public float RoundLength;  // Time in seconds.
     private float roundTimer;
+    public string playerOneTag;
+    public string playerTwoTag;
 
     private int playerOneScore = 0;
     private int playeTwoScore = 0;
-    
+
     // Use this for initialization
-	void Start () {
+    void Start () {
         roundTimer = RoundLength;
 	}
 	
@@ -28,4 +30,10 @@ public class RoundManager : MonoBehaviour {
         if (roundTimer <= 0)
             SceneManager.LoadScene(ResultsScene);
 	}
+    
+    public void AddScore(string player,int score)
+    {
+
+
+    }
 }

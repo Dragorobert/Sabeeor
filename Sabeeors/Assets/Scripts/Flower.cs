@@ -22,16 +22,16 @@ public class Flower : MonoBehaviour {
         if (roundManager == null)
             Debug.LogError("Round manager not found!");
 
-        playerOneTag = roundManager.PlayerOneTag;
-        playerTwoTag = roundManager.PlayerTwoTag;
+        playerOneTag = roundManager.playerOneTag;
+        playerTwoTag = roundManager.playerTwoTag;
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag(playerOneTag))
-            roundManager.AddScore(1, Points);
+            roundManager.AddScore(playerOneTag, Points);
         else if (collision.gameObject.CompareTag(playerTwoTag))
-            roundManager.AddScore(2, Points);
+            roundManager.AddScore(playerTwoTag, Points);
 
         if (collision.gameObject.CompareTag(playerOneTag) || collision.gameObject.CompareTag(playerTwoTag))
             Destroy(gameObject);
