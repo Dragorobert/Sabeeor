@@ -18,7 +18,6 @@ public class Arrow : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("CAMBIA");
             switch (selectedDirection)
         { 
             case direccionFlecha.right:
