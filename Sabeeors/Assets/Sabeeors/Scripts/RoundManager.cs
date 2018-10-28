@@ -39,7 +39,7 @@ public class RoundManager : MonoBehaviour {
         if (playerOneText == null || playerTwoText == null || timerText == null)
             Debug.LogError("Error finding text objects.");
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 3; i++)
             SpawnFlower();
     }
 
@@ -51,7 +51,7 @@ public class RoundManager : MonoBehaviour {
 
     private float RandomGridPosition()
     {
-        return Mathf.Round(Random.Range(-5f, 4f));
+        return Mathf.Round(Random.Range(-3.0f, 3.0f));
     }
 	
 	// Update is called once per frame
