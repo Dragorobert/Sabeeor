@@ -18,11 +18,6 @@ public class PlayerCursor : MonoBehaviour {
 
     public GameObject[] arrowsPrefab;
 
-    bool empty = true;
-
-    int maxArrow = 3;
-    int arrowCount = 0;
-
     public KeyCode Up;
     public KeyCode Left;
     public KeyCode Down;
